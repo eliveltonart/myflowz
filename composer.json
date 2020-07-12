@@ -6,6 +6,10 @@
         "framework",
         "laravel"
     ],
+    "post-install-cmd": [
+        "php artisan clear-compiled",
+        "chmod -R 777 public/"
+    ],
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
@@ -15,6 +19,7 @@
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0"
     },
+    
     "require-dev": {
         "facade/ignition": "^2.0",
         "fzaninotto/faker": "^1.9.1",
@@ -60,4 +65,5 @@
             "@php artisan key:generate --ansi"
         ]
     }
+    
 }
