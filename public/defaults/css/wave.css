@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700&display=swap");
+@import url(https://fonts.googleapis.com/css?family=Audiowide);
+@import url(https://fonts.googleapis.com/css?family=Permanent+Marker);
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #2b1165;
+  background: linear-gradient(180deg, #203a8d 0%, #367E73 37%, #367E73 69%, #7c41f5 100%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  background-size: 5px 5px, 5px 5px;
+  background-position: -1px -1px, -1px -1px;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  mix-blend-mode: difference;
+  z-index: 10000;
+}
+
+.glitch {
+  clip-path: polygon(0 0, 100% 0, 100% 0.5em, 0 0.5em);
+  animation: glitch 10s linear infinite;
+  transform: translatex(0.1rem);
+}
+
+@keyframes glitch {
+  to {
+    clip-path: polygon(0 calc(100% - .5em), 100% calc(100% - .5em), 0 100%, 0 100%);
+  }
+}
+.sun {
+  width: 40vh;
+  height: 40vh;
+  font-size: 1rem;
+  border-radius: 20vh;
+  position: relative;
+  overflow: hidden;
+}
+.sun:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  height: 50%;
+  background-color: #f54171;
+  background: linear-gradient(0deg, #2b1165 0%, #1a3a82 37%, #ab24b1 69%, #f54171 100%);
+  background-size: 40vh 40vh;
+  width: 100%;
+}
+.sun:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #f54171;
+  background: linear-gradient(0deg, #2b1165 0%, #1a3a82 37%, #ab24b1 69%, #f54171 100%);
+  background-size: 40vh 40vh;
+  background-position: bottom center;
+  clip-path: polygon(0 -10em, 100% -10em, 100% -10.5em, 0 -10.5em, 0 -9em, 100% -9em, 100% -9.5em, 0 -9.5em, 0 -8em, 100% -8em, 100% -8.5em, 0 -8.5em, 0 -7em, 100% -7em, 100% -7.5em, 0 -7.5em, 0 -6em, 100% -6em, 100% -6.5em, 0 -6.5em, 0 -5em, 100% -5em, 100% -5.5em, 0 -5.5em, 0 -4em, 100% -4em, 100% -4.5em, 0 -4.5em, 0 -3em, 100% -3em, 100% -3.5em, 0 -3.5em, 0 -2em, 100% -2em, 100% -2.5em, 0 -2.5em, 0 -1em, 100% -1em, 100% -1.5em, 0 -1.5em, 0 0, 100% 0, 100% -0.5em, 0 -0.5em, 0 0, 100% 0, 100% 0.5em, 0 0.5em, 0 1em, 100% 1em, 100% 1.5em, 0 1.5em, 0 2em, 100% 2em, 100% 2.5em, 0 2.5em, 0 3em, 100% 3em, 100% 3.5em, 0 3.5em, 0 4em, 100% 4em, 100% 4.5em, 0 4.5em, 0 5em, 100% 5em, 100% 5.5em, 0 5.5em, 0 6em, 100% 6em, 100% 6.5em, 0 6.5em, 0 7em, 100% 7em, 100% 7.5em, 0 7.5em, 0 8em, 100% 8em, 100% 8.5em, 0 8.5em, 0 9em, 100% 9em, 100% 9.5em, 0 9.5em);
+  animation: lightEffect 20s linear infinite reverse;
+}
+
+@keyframes lightEffect {
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 0.5em, 0 0.5em, 0 1em, 100% 1em, 100% 1.5em, 0 1.5em, 0 2em, 100% 2em, 100% 2.5em, 0 2.5em, 0 3em, 100% 3em, 100% 3.5em, 0 3.5em, 0 4em, 100% 4em, 100% 4.5em, 0 4.5em, 0 5em, 100% 5em, 100% 5.5em, 0 5.5em, 0 6em, 100% 6em, 100% 6.5em, 0 6.5em, 0 7em, 100% 7em, 100% 7.5em, 0 7.5em, 0 8em, 100% 8em, 100% 8.5em, 0 8.5em, 0 9em, 100% 9em, 100% 9.5em, 0 9.5em, 0 10em, 100% 10em, 100% 10em, 0 10em, 0 11em, 100% 11em, 100% 11.5em, 0 11.5em, 0 12em, 100% 12em, 100% 12.5em, 0 12.5em, 0 13em, 100% 13em, 100% 13.5em, 0 13.5em, 0 14em, 100% 14em, 100% 14.5em, 0 14.5em, 0 15em, 100% 15em, 100% 15.5em, 0 15.5em, 0 16em, 100% 16em, 100% 16.5em, 0 16.5em, 0 17em, 100% 17em, 100% 17.5em, 0 17.5em, 0 18em, 100% 18em, 100% 18.5em, 0 18.5em, 0 19em, 100% 19em, 100% 19.5em, 0 19.5em, 0 20em, 100% 20em, 100% 20.5em, 0 20.5em);
+  }
+}
+.text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: #2b1165;
+  letter-spacing: -1px;
+  z-index: 10;
+  transform: translatey(10px);
+}
+.text:after {
+  content: 'RETRO';
+  display: block;
+  position: absolute;
+  transform: scale(1.12);
+  text-shadow: 2px 0 1px #2b1165, -2px 0 1px #2b1165, 0 -2px 1px #2b1165, 0 2px 1px #2b1165;
+  color: #D7C5D1;
+  z-index: 9;
+}
+
+
+
+
+
+
+
+
+.capatv {
+  animation: 0.1s normal parpadeo infinite;
+  opacity: 0.1;
+  z-index: 200;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGCAYAAAD37n+BAAAALElEQVQYV2NkYGD4/x9IMAIxAxoDmzhIHfU0gCxFB9S1AacfsFmNJQzAoQIAH84j/OCkeYUAAAAASUVORK5CYII=');
+}
+
+@keyframes parpadeoConsulting {
+  0% {
+    -webkit-filter: drop-shadow(2px 2px 25px #f008b7);
+    -webkit-text-stroke: 4px #f008b7;
+   
+  }
+  50% {
+    -webkit-filter: drop-shadow(2px 2px 5px #f008b7);
+    -webkit-text-stroke: 4px #561446;
+   
+    
+  }
+  100% {
+    -webkit-filter: drop-shadow(2px 2px 25px #f008b7);
+    -webkit-text-stroke: 4px #f008b7;
+    
+  }
+}
+
+@keyframes parpadeoAbsolom {
+  0% {
+    -webkit-filter: drop-shadow(2px 2px 25px #8fdcea);
+  }
+  50% {
+    -webkit-filter: drop-shadow(2px 2px 5px #8fdcea);
+  }
+  100% {
+    -webkit-filter: drop-shadow(2px 2px 25px #8fdcea);
+  }
+}
+
+@keyframes parpadeo {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0.13;
+  }
+}
+
+.oscurecer {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.centro {
+  
+  position: absolute;
+  top: 0;
+  bottom: 0;
+ 
+  right: 0;
+  margin: auto;
+  width:100%;
+  z-index: 105;
+  text-align:center;
+}
+
+.absolom {
+  animation: 4s normal parpadeoAbsolom infinite;
+  font-family: 'Audiowide', cursive;
+  font-size: 160px;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.5px #8fdcea;
+  -webkit-background-clip: text;
+  background-image: -webkit-linear-gradient(top, #0899bc 0%, #08d8ff 27%, #e8e8e8 55%, #891f68 71%, #e12a929e 82%, #ff59e0 100%);
+  -webkit-filter: drop-shadow(2px 2px 15px #8fdcea);
+  margin: 40vh 0 0;
+  line-height: 18px;
+}
+
+.consulting {
+  font-family: 'Permanent Marker', cursive;
+  animation: 4s normal parpadeoConsulting infinite;
+  font-size: 100px;
+  -webkit-text-fill-color: #F975F7;
+  -webkit-text-stroke: 4px #f008b7;
+  -webkit-filter: drop-shadow(2px 2px 15px #f008b7);
+  text-align: center;
+  margin: 0;
+}
+
+
+
